@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tvwFiles = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
-            // treeView1
+            // tvwFiles
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(800, 450);
-            this.treeView1.TabIndex = 0;
+            this.tvwFiles.AllowDrop = true;
+            this.tvwFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvwFiles.Location = new System.Drawing.Point(0, 0);
+            this.tvwFiles.Name = "tvwFiles";
+            this.tvwFiles.Size = new System.Drawing.Size(800, 450);
+            this.tvwFiles.TabIndex = 0;
+            this.tvwFiles.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TvwFiles_NodeMouseDoubleClick);
+            this.tvwFiles.DragDrop += new System.Windows.Forms.DragEventHandler(this.TvwFiles_DragDrop);
+            this.tvwFiles.DragEnter += new System.Windows.Forms.DragEventHandler(this.TvwFiles_DragEnter);
             // 
             // ExplorerForm
             // 
@@ -46,7 +50,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.CloseButton = false;
             this.CloseButtonVisible = false;
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.tvwFiles);
             this.Name = "ExplorerForm";
             this.TabText = "Explorer";
             this.ResumeLayout(false);
@@ -55,6 +59,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView tvwFiles;
     }
 }

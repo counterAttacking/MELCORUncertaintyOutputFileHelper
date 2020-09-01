@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
-            this.dockPnlMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.vS2015DarkTheme1 = new WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme();
-            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
+            this.ribbonTabFile = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.ribbonBtnOpenFolder = new System.Windows.Forms.RibbonButton();
             this.ribbonBtnOpenFile = new System.Windows.Forms.RibbonButton();
+            this.dockPnlMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+            this.vS2015DarkTheme1 = new WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -61,27 +61,15 @@
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
             this.ribbon1.Size = new System.Drawing.Size(784, 143);
             this.ribbon1.TabIndex = 0;
-            this.ribbon1.Tabs.Add(this.ribbonTab1);
+            this.ribbon1.Tabs.Add(this.ribbonTabFile);
             this.ribbon1.TabSpacing = 4;
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Halloween;
             // 
-            // dockPnlMain
+            // ribbonTabFile
             // 
-            this.dockPnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dockPnlMain.DockBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.dockPnlMain.Location = new System.Drawing.Point(0, 143);
-            this.dockPnlMain.Name = "dockPnlMain";
-            this.dockPnlMain.Padding = new System.Windows.Forms.Padding(6);
-            this.dockPnlMain.ShowAutoHideContentOnHover = false;
-            this.dockPnlMain.Size = new System.Drawing.Size(784, 418);
-            this.dockPnlMain.TabIndex = 1;
-            this.dockPnlMain.Theme = this.vS2015DarkTheme1;
-            // 
-            // ribbonTab1
-            // 
-            this.ribbonTab1.Name = "ribbonTab1";
-            this.ribbonTab1.Panels.Add(this.ribbonPanel1);
-            this.ribbonTab1.Text = "File";
+            this.ribbonTabFile.Name = "ribbonTabFile";
+            this.ribbonTabFile.Panels.Add(this.ribbonPanel1);
+            this.ribbonTabFile.Text = "File";
             // 
             // ribbonPanel1
             // 
@@ -112,6 +100,18 @@
             this.ribbonBtnOpenFile.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             this.ribbonBtnOpenFile.Click += new System.EventHandler(this.RibbonBtnOpenFile_Click);
             // 
+            // dockPnlMain
+            // 
+            this.dockPnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dockPnlMain.DockBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dockPnlMain.Location = new System.Drawing.Point(0, 143);
+            this.dockPnlMain.Name = "dockPnlMain";
+            this.dockPnlMain.Padding = new System.Windows.Forms.Padding(6);
+            this.dockPnlMain.ShowAutoHideContentOnHover = false;
+            this.dockPnlMain.Size = new System.Drawing.Size(784, 418);
+            this.dockPnlMain.TabIndex = 1;
+            this.dockPnlMain.Theme = this.vS2015DarkTheme1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -134,7 +134,7 @@
         private System.Windows.Forms.Ribbon ribbon1;
         private WeifenLuo.WinFormsUI.Docking.DockPanel dockPnlMain;
         private WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme vS2015DarkTheme1;
-        private System.Windows.Forms.RibbonTab ribbonTab1;
+        private System.Windows.Forms.RibbonTab ribbonTabFile;
         private System.Windows.Forms.RibbonPanel ribbonPanel1;
         private System.Windows.Forms.RibbonButton ribbonBtnOpenFolder;
         private System.Windows.Forms.RibbonButton ribbonBtnOpenFile;

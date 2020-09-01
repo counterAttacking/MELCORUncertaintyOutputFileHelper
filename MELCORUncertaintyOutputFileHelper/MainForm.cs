@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace MELCORUncertaintyOutputFileHelper
         {
             InitializeComponent();
 
-            this.frmExplorer = new ExplorerForm();
+            this.frmExplorer = new ExplorerForm(this);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -47,6 +48,22 @@ namespace MELCORUncertaintyOutputFileHelper
             {
                 return;
             }
+            List<PCOUTFIle> pcoutFiles = new List<PCOUTFIle>();
+            foreach (var file in openFileDialog.FileNames)
+            {
+                try
+                {
+                    var pcoutFile = new PCOUTFIle();
+                    pcoutFile.name = Path.GetFileName(file);
+                    pcoutFile.path = file;
+                    pcoutFiles.Add(pcoutFile);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            this.frmExplorer.AddPCOUTFiles(pcoutFiles);
         }
 
     }
