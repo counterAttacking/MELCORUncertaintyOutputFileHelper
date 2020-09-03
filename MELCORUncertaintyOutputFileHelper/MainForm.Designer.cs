@@ -29,56 +29,86 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.ribbon1 = new System.Windows.Forms.Ribbon();
+            this.mainFormRibbon = new System.Windows.Forms.Ribbon();
             this.ribbonTabFile = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonBtnOpenFolder = new System.Windows.Forms.RibbonButton();
-            this.ribbonBtnOpenFile = new System.Windows.Forms.RibbonButton();
+            this.ribbonPnlOpen = new System.Windows.Forms.RibbonPanel();
             this.dockPnlMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.vS2015DarkTheme1 = new WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme();
+            this.ribbonTabBuild = new System.Windows.Forms.RibbonTab();
+            this.ribbonPnlExecute = new System.Windows.Forms.RibbonPanel();
+            this.ribbonBtnOpenFolder = new System.Windows.Forms.RibbonButton();
+            this.ribbonBtnOpenFile = new System.Windows.Forms.RibbonButton();
+            this.ribbonBtnRun = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
-            // ribbon1
+            // mainFormRibbon
             // 
-            this.ribbon1.Font = new System.Drawing.Font("맑은 고딕", 9F);
-            this.ribbon1.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.Minimized = false;
-            this.ribbon1.Name = "ribbon1";
-            // 
-            // 
-            // 
-            this.ribbon1.OrbDropDown.BorderRoundness = 8;
-            this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.OrbDropDown.Name = "";
-            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 447);
-            this.ribbon1.OrbDropDown.TabIndex = 0;
-            this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
-            this.ribbon1.OrbVisible = false;
+            this.mainFormRibbon.Font = new System.Drawing.Font("맑은 고딕", 9F);
+            this.mainFormRibbon.Location = new System.Drawing.Point(0, 0);
+            this.mainFormRibbon.Minimized = false;
+            this.mainFormRibbon.Name = "mainFormRibbon";
             // 
             // 
             // 
-            this.ribbon1.QuickAccessToolbar.Visible = false;
-            this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(784, 143);
-            this.ribbon1.TabIndex = 0;
-            this.ribbon1.Tabs.Add(this.ribbonTabFile);
-            this.ribbon1.TabSpacing = 4;
-            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Halloween;
+            this.mainFormRibbon.OrbDropDown.BorderRoundness = 8;
+            this.mainFormRibbon.OrbDropDown.Location = new System.Drawing.Point(0, 0);
+            this.mainFormRibbon.OrbDropDown.Name = "";
+            this.mainFormRibbon.OrbDropDown.Size = new System.Drawing.Size(527, 447);
+            this.mainFormRibbon.OrbDropDown.TabIndex = 0;
+            this.mainFormRibbon.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
+            this.mainFormRibbon.OrbVisible = false;
+            // 
+            // 
+            // 
+            this.mainFormRibbon.QuickAccessToolbar.Visible = false;
+            this.mainFormRibbon.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.mainFormRibbon.Size = new System.Drawing.Size(784, 143);
+            this.mainFormRibbon.TabIndex = 0;
+            this.mainFormRibbon.Tabs.Add(this.ribbonTabFile);
+            this.mainFormRibbon.Tabs.Add(this.ribbonTabBuild);
+            this.mainFormRibbon.TabSpacing = 4;
+            this.mainFormRibbon.ThemeColor = System.Windows.Forms.RibbonTheme.Halloween;
             // 
             // ribbonTabFile
             // 
             this.ribbonTabFile.Name = "ribbonTabFile";
-            this.ribbonTabFile.Panels.Add(this.ribbonPanel1);
+            this.ribbonTabFile.Panels.Add(this.ribbonPnlOpen);
             this.ribbonTabFile.Text = "File";
             // 
-            // ribbonPanel1
+            // ribbonPnlOpen
             // 
-            this.ribbonPanel1.ButtonMoreEnabled = false;
-            this.ribbonPanel1.ButtonMoreVisible = false;
-            this.ribbonPanel1.Items.Add(this.ribbonBtnOpenFolder);
-            this.ribbonPanel1.Items.Add(this.ribbonBtnOpenFile);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Text = "Open";
+            this.ribbonPnlOpen.ButtonMoreEnabled = false;
+            this.ribbonPnlOpen.ButtonMoreVisible = false;
+            this.ribbonPnlOpen.Items.Add(this.ribbonBtnOpenFolder);
+            this.ribbonPnlOpen.Items.Add(this.ribbonBtnOpenFile);
+            this.ribbonPnlOpen.Name = "ribbonPnlOpen";
+            this.ribbonPnlOpen.Text = "Open";
+            // 
+            // dockPnlMain
+            // 
+            this.dockPnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dockPnlMain.DockBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dockPnlMain.Location = new System.Drawing.Point(0, 143);
+            this.dockPnlMain.Name = "dockPnlMain";
+            this.dockPnlMain.Padding = new System.Windows.Forms.Padding(6);
+            this.dockPnlMain.ShowAutoHideContentOnHover = false;
+            this.dockPnlMain.Size = new System.Drawing.Size(784, 418);
+            this.dockPnlMain.TabIndex = 1;
+            this.dockPnlMain.Theme = this.vS2015DarkTheme1;
+            // 
+            // ribbonTabBuild
+            // 
+            this.ribbonTabBuild.Name = "ribbonTabBuild";
+            this.ribbonTabBuild.Panels.Add(this.ribbonPnlExecute);
+            this.ribbonTabBuild.Text = "Build";
+            // 
+            // ribbonPnlExecute
+            // 
+            this.ribbonPnlExecute.ButtonMoreEnabled = false;
+            this.ribbonPnlExecute.ButtonMoreVisible = false;
+            this.ribbonPnlExecute.Items.Add(this.ribbonBtnRun);
+            this.ribbonPnlExecute.Name = "ribbonPnlExecute";
+            this.ribbonPnlExecute.Text = "Execute";
             // 
             // ribbonBtnOpenFolder
             // 
@@ -100,17 +130,14 @@
             this.ribbonBtnOpenFile.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             this.ribbonBtnOpenFile.Click += new System.EventHandler(this.RibbonBtnOpenFile_Click);
             // 
-            // dockPnlMain
+            // ribbonBtnRun
             // 
-            this.dockPnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dockPnlMain.DockBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.dockPnlMain.Location = new System.Drawing.Point(0, 143);
-            this.dockPnlMain.Name = "dockPnlMain";
-            this.dockPnlMain.Padding = new System.Windows.Forms.Padding(6);
-            this.dockPnlMain.ShowAutoHideContentOnHover = false;
-            this.dockPnlMain.Size = new System.Drawing.Size(784, 418);
-            this.dockPnlMain.TabIndex = 1;
-            this.dockPnlMain.Theme = this.vS2015DarkTheme1;
+            this.ribbonBtnRun.Image = global::MELCORUncertaintyOutputFileHelper.Properties.Resources.start_48;
+            this.ribbonBtnRun.LargeImage = global::MELCORUncertaintyOutputFileHelper.Properties.Resources.start_48;
+            this.ribbonBtnRun.Name = "ribbonBtnRun";
+            this.ribbonBtnRun.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonBtnRun.SmallImage")));
+            this.ribbonBtnRun.Text = "Run";
+            this.ribbonBtnRun.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             // 
             // MainForm
             // 
@@ -118,7 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dockPnlMain);
-            this.Controls.Add(this.ribbon1);
+            this.Controls.Add(this.mainFormRibbon);
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Name = "MainForm";
@@ -131,13 +158,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Ribbon ribbon1;
+        private System.Windows.Forms.Ribbon mainFormRibbon;
         private WeifenLuo.WinFormsUI.Docking.DockPanel dockPnlMain;
         private WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme vS2015DarkTheme1;
         private System.Windows.Forms.RibbonTab ribbonTabFile;
-        private System.Windows.Forms.RibbonPanel ribbonPanel1;
+        private System.Windows.Forms.RibbonPanel ribbonPnlOpen;
         private System.Windows.Forms.RibbonButton ribbonBtnOpenFolder;
         private System.Windows.Forms.RibbonButton ribbonBtnOpenFile;
+        private System.Windows.Forms.RibbonTab ribbonTabBuild;
+        private System.Windows.Forms.RibbonPanel ribbonPnlExecute;
+        private System.Windows.Forms.RibbonButton ribbonBtnRun;
     }
 }
 

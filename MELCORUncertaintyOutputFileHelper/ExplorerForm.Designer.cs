@@ -35,6 +35,7 @@
             // 
             this.tvwFiles.AllowDrop = true;
             this.tvwFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvwFiles.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tvwFiles.Location = new System.Drawing.Point(0, 0);
             this.tvwFiles.Name = "tvwFiles";
             this.tvwFiles.Size = new System.Drawing.Size(800, 450);
