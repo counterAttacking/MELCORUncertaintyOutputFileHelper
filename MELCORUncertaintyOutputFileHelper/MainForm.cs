@@ -128,5 +128,10 @@ namespace MELCORUncertaintyOutputFileHelper
             this.frmExplorer.AddPCOUTFiles(pcoutFiles);
         }
 
+        private void RibbonBtnRun_Click(object sender, EventArgs e)
+        {
+            this.frmExplorer.Run();
+        }
+
     }
 }

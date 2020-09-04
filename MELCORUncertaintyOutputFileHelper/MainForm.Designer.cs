@@ -32,13 +32,13 @@
             this.mainFormRibbon = new System.Windows.Forms.Ribbon();
             this.ribbonTabFile = new System.Windows.Forms.RibbonTab();
             this.ribbonPnlOpen = new System.Windows.Forms.RibbonPanel();
-            this.dockPnlMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.vS2015DarkTheme1 = new WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme();
-            this.ribbonTabBuild = new System.Windows.Forms.RibbonTab();
-            this.ribbonPnlExecute = new System.Windows.Forms.RibbonPanel();
             this.ribbonBtnOpenFolder = new System.Windows.Forms.RibbonButton();
             this.ribbonBtnOpenFile = new System.Windows.Forms.RibbonButton();
+            this.ribbonTabBuild = new System.Windows.Forms.RibbonTab();
+            this.ribbonPnlExecute = new System.Windows.Forms.RibbonPanel();
             this.ribbonBtnRun = new System.Windows.Forms.RibbonButton();
+            this.dockPnlMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+            this.vS2015DarkTheme1 = new WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme();
             this.SuspendLayout();
             // 
             // mainFormRibbon
@@ -84,32 +84,6 @@
             this.ribbonPnlOpen.Name = "ribbonPnlOpen";
             this.ribbonPnlOpen.Text = "Open";
             // 
-            // dockPnlMain
-            // 
-            this.dockPnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dockPnlMain.DockBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.dockPnlMain.Location = new System.Drawing.Point(0, 143);
-            this.dockPnlMain.Name = "dockPnlMain";
-            this.dockPnlMain.Padding = new System.Windows.Forms.Padding(6);
-            this.dockPnlMain.ShowAutoHideContentOnHover = false;
-            this.dockPnlMain.Size = new System.Drawing.Size(784, 418);
-            this.dockPnlMain.TabIndex = 1;
-            this.dockPnlMain.Theme = this.vS2015DarkTheme1;
-            // 
-            // ribbonTabBuild
-            // 
-            this.ribbonTabBuild.Name = "ribbonTabBuild";
-            this.ribbonTabBuild.Panels.Add(this.ribbonPnlExecute);
-            this.ribbonTabBuild.Text = "Build";
-            // 
-            // ribbonPnlExecute
-            // 
-            this.ribbonPnlExecute.ButtonMoreEnabled = false;
-            this.ribbonPnlExecute.ButtonMoreVisible = false;
-            this.ribbonPnlExecute.Items.Add(this.ribbonBtnRun);
-            this.ribbonPnlExecute.Name = "ribbonPnlExecute";
-            this.ribbonPnlExecute.Text = "Execute";
-            // 
             // ribbonBtnOpenFolder
             // 
             this.ribbonBtnOpenFolder.Image = global::MELCORUncertaintyOutputFileHelper.Properties.Resources.newFolder_48;
@@ -130,6 +104,20 @@
             this.ribbonBtnOpenFile.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             this.ribbonBtnOpenFile.Click += new System.EventHandler(this.RibbonBtnOpenFile_Click);
             // 
+            // ribbonTabBuild
+            // 
+            this.ribbonTabBuild.Name = "ribbonTabBuild";
+            this.ribbonTabBuild.Panels.Add(this.ribbonPnlExecute);
+            this.ribbonTabBuild.Text = "Build";
+            // 
+            // ribbonPnlExecute
+            // 
+            this.ribbonPnlExecute.ButtonMoreEnabled = false;
+            this.ribbonPnlExecute.ButtonMoreVisible = false;
+            this.ribbonPnlExecute.Items.Add(this.ribbonBtnRun);
+            this.ribbonPnlExecute.Name = "ribbonPnlExecute";
+            this.ribbonPnlExecute.Text = "Execute";
+            // 
             // ribbonBtnRun
             // 
             this.ribbonBtnRun.Image = global::MELCORUncertaintyOutputFileHelper.Properties.Resources.start_48;
@@ -138,6 +126,19 @@
             this.ribbonBtnRun.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonBtnRun.SmallImage")));
             this.ribbonBtnRun.Text = "Run";
             this.ribbonBtnRun.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.ribbonBtnRun.Click += new System.EventHandler(this.RibbonBtnRun_Click);
+            // 
+            // dockPnlMain
+            // 
+            this.dockPnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dockPnlMain.DockBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dockPnlMain.Location = new System.Drawing.Point(0, 143);
+            this.dockPnlMain.Name = "dockPnlMain";
+            this.dockPnlMain.Padding = new System.Windows.Forms.Padding(6);
+            this.dockPnlMain.ShowAutoHideContentOnHover = false;
+            this.dockPnlMain.Size = new System.Drawing.Size(784, 418);
+            this.dockPnlMain.TabIndex = 1;
+            this.dockPnlMain.Theme = this.vS2015DarkTheme1;
             // 
             // MainForm
             // 
