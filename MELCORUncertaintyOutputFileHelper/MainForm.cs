@@ -130,6 +130,8 @@ namespace MELCORUncertaintyOutputFileHelper
 
         private void RibbonBtnRun_Click(object sender, EventArgs e)
         {
+            /*var frmResult = new ResultForm();
+            frmResult.Show(this.dockPnlMain, DockState.Document);*/
             this.frmExplorer.Run();
         }
 
