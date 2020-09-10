@@ -60,7 +60,8 @@ namespace MELCORUncertaintyOutputFileHelper
 
         public void PrintAnalysis(Analysis analysis)
         {
-            this.dgvResult.Rows.Add(analysis.name, analysis.samg, analysis.fpRelease, analysis.availTime,
+            this.dgvResult.Rows.Add(analysis.name, string.Format("{0:0.0000E+00}", analysis.samg),
+                string.Format("{0:0.0000E+00}", analysis.fpRelease), string.Format("{0:0.0000E+00}", analysis.availTime),
                 string.Format("{0:0.0000E+00}", analysis.fraction24.xe), string.Format("{0:0.0000E+00}", analysis.fraction24.cs),
                 string.Format("{0:0.0000E+00}", analysis.fraction24.ba), string.Format("{0:0.0000E+00}", analysis.fraction24.i2),
                 string.Format("{0:0.0000E+00}", analysis.fraction24.te), string.Format("{0:0.0000E+00}", analysis.fraction24.ru),

@@ -367,25 +367,25 @@ namespace MELCORUncertaintyOutputFileHelper
         private Analysis CalculateFraction(Analysis analysis)
         {
             var tmp = analysis;
-            tmp.fraction24.xe = analysis.nuclide24.xe / 1.88E+02;
-            tmp.fraction24.cs = (analysis.nuclide24.cs + analysis.nuclide24.csi * 0.511556 + analysis.nuclide24.csm * 0.73478922) / 1.05E+02;
-            tmp.fraction24.ba = analysis.nuclide24.ba / 8.25E+01;
-            tmp.fraction24.i2 = (analysis.nuclide24.i2 + analysis.nuclide24.csi * 0.488444) / 8.10E+00;
-            tmp.fraction24.te = analysis.nuclide24.te / 1.65E+01;
-            tmp.fraction24.ru = analysis.nuclide24.ru / 1.16E+02;
-            tmp.fraction24.mo = (analysis.nuclide24.mo + analysis.nuclide24.csm * 0.26521078) / 1.37E+02;
-            tmp.fraction24.ce = analysis.nuclide24.ce;
-            tmp.fraction24.la = analysis.nuclide24.la / 2.24E+02;
+            tmp.fraction24.xe = analysis.nuclide24.xe / 2.909E+02;
+            tmp.fraction24.cs = (analysis.nuclide24.cs + analysis.nuclide24.csi * 0.511556 + analysis.nuclide24.csm * 0.73478922) / 1.621E+02;
+            tmp.fraction24.ba = analysis.nuclide24.ba / 1.276E+02;
+            tmp.fraction24.i2 = (analysis.nuclide24.i2 + analysis.nuclide24.csi * 0.488444) / 1.253E+01;
+            tmp.fraction24.te = analysis.nuclide24.te / 2.552E+01;
+            tmp.fraction24.ru = analysis.nuclide24.ru / 1.795E+02;
+            tmp.fraction24.mo = (analysis.nuclide24.mo + analysis.nuclide24.csm * 0.26521078) / 2.117E+02;
+            tmp.fraction24.ce = analysis.nuclide24.ce / 3.735E+02;
+            tmp.fraction24.la = analysis.nuclide24.la / 3.466E+02;
 
-            tmp.fraction72.xe = analysis.nuclide72.xe / 1.88E+02;
-            tmp.fraction72.cs = (analysis.nuclide72.cs + analysis.nuclide72.csi * 0.511556 + analysis.nuclide72.csm * 0.73478922) / 1.05E+02;
-            tmp.fraction72.ba = analysis.nuclide72.ba / 8.25E+01;
-            tmp.fraction72.i2 = (analysis.nuclide72.i2 + analysis.nuclide72.csi * 0.488444) / 8.10E+00;
-            tmp.fraction72.te = analysis.nuclide72.te / 1.65E+01;
-            tmp.fraction72.ru = analysis.nuclide72.ru / 1.16E+02;
-            tmp.fraction72.mo = (analysis.nuclide72.mo + analysis.nuclide72.csm * 0.26521078) / 1.37E+02;
-            tmp.fraction72.ce = analysis.nuclide72.ce;
-            tmp.fraction72.la = analysis.nuclide72.la / 2.24E+02;
+            tmp.fraction72.xe = analysis.nuclide72.xe / 2.909E+02;
+            tmp.fraction72.cs = (analysis.nuclide72.cs + analysis.nuclide72.csi * 0.511556 + analysis.nuclide72.csm * 0.73478922) / 1.621E+02;
+            tmp.fraction72.ba = analysis.nuclide72.ba / 1.276E+02;
+            tmp.fraction72.i2 = (analysis.nuclide72.i2 + analysis.nuclide72.csi * 0.488444) / 1.253E+01;
+            tmp.fraction72.te = analysis.nuclide72.te / 2.552E+01;
+            tmp.fraction72.ru = analysis.nuclide72.ru / 1.795E+02;
+            tmp.fraction72.mo = (analysis.nuclide72.mo + analysis.nuclide72.csm * 0.26521078) / 2.117E+02;
+            tmp.fraction72.ce = analysis.nuclide72.ce / 3.735E+02;
+            tmp.fraction72.la = analysis.nuclide72.la / 3.466E+02;
 
             return tmp;
         }
