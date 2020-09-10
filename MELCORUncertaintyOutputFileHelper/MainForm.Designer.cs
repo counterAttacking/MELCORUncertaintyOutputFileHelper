@@ -147,6 +147,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dockPnlMain);
             this.Controls.Add(this.mainFormRibbon);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Name = "MainForm";

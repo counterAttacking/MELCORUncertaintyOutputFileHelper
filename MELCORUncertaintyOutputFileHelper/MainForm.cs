@@ -16,6 +16,7 @@ namespace MELCORUncertaintyOutputFileHelper
     public partial class MainForm : RibbonForm
     {
         private ExplorerForm frmExplorer;
+        private ResultForm frmResult;
         private static string targetStr = "_PCOUT.txt";
 
         public MainForm()
@@ -23,11 +24,13 @@ namespace MELCORUncertaintyOutputFileHelper
             InitializeComponent();
 
             this.frmExplorer = new ExplorerForm(this);
+            this.frmResult = new ResultForm();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.frmExplorer.Show(this.dockPnlMain, DockState.DockLeft);
+            this.frmResult.Show(this.dockPnlMain, DockState.Document);
         }
 
         private void RibbonBtnOpenFolder_Click(object sender, EventArgs e)
@@ -130,9 +133,12 @@ namespace MELCORUncertaintyOutputFileHelper
 
         private void RibbonBtnRun_Click(object sender, EventArgs e)
         {
-            /*var frmResult = new ResultForm();
-            frmResult.Show(this.dockPnlMain, DockState.Document);*/
             this.frmExplorer.Run();
+        }
+
+        public void PrintResult(Analysis analysis)
+        {
+            this.frmResult.PrintAnalysis(analysis);
         }
 
     }

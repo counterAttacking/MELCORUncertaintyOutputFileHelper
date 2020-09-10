@@ -91,15 +91,11 @@ namespace MELCORUncertaintyOutputFileHelper
 
         public void Run()
         {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
             if (this.tvwFiles.Nodes.Count <= 0)
             {
                 return;
             }
             this.TraversalAllNode(this.tvwFiles);
-            stopwatch.Stop();
-            MessageBox.Show(stopwatch.ElapsedMilliseconds.ToString());
             MessageBox.Show("It's done.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -110,7 +106,9 @@ namespace MELCORUncertaintyOutputFileHelper
             {
                 foreach (TreeNode elem in node.Nodes)
                 {
-                    this.ReadFiles(elem.Name);
+                    var analysis = this.ReadFiles(elem.Name);
+                    analysis = this.CalculateFraction(analysis);
+                    this.frmMain.PrintResult(analysis);
                 }
             }
         }
@@ -197,87 +195,70 @@ namespace MELCORUncertaintyOutputFileHelper
                             }
                             else if (splitedLineVal[0].Equals("XE"))
                             {
-                                nuclide24.xe = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.xe = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CS"))
                             {
-                                nuclide24.cs = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.cs = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("BA"))
                             {
-                                nuclide24.ba = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.ba = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("I2"))
                             {
-                                nuclide24.i2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.i2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("TE"))
                             {
-                                nuclide24.te = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.te = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("RU"))
                             {
-                                nuclide24.ru = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.ru = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("MO"))
                             {
-                                nuclide24.mo = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.mo = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CE"))
                             {
-                                nuclide24.ce = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.ce = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("LA"))
                             {
-                                nuclide24.la = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.la = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("UO2"))
                             {
-                                nuclide24.uo2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.uo2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CD"))
                             {
-                                nuclide24.cd = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.cd = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("AG"))
                             {
-                                nuclide24.ag = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.ag = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("BO2"))
                             {
-                                nuclide24.bo2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.bo2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("H2O"))
                             {
-                                nuclide24.h2o = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.h2o = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CON"))
                             {
-                                nuclide24.con = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.con = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CSI"))
                             {
-                                nuclide24.csi = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.csi = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CSM"))
                             {
-                                nuclide24.csm = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide24.csm = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 is24hrFound = false;
                             }
@@ -306,87 +287,70 @@ namespace MELCORUncertaintyOutputFileHelper
                             }
                             else if (splitedLineVal[0].Equals("XE"))
                             {
-                                nuclide72.xe = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.xe = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CS"))
                             {
-                                nuclide72.cs = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.cs = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("BA"))
                             {
-                                nuclide72.ba = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.ba = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("I2"))
                             {
-                                nuclide72.i2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.i2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("TE"))
                             {
-                                nuclide72.te = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.te = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("RU"))
                             {
-                                nuclide72.ru = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.ru = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("MO"))
                             {
-                                nuclide72.mo = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.mo = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CE"))
                             {
-                                nuclide72.ce = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.ce = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("LA"))
                             {
-                                nuclide72.la = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.la = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("UO2"))
                             {
-                                nuclide72.uo2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.uo2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CD"))
                             {
-                                nuclide72.cd = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.cd = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("AG"))
                             {
-                                nuclide72.ag = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.ag = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("BO2"))
                             {
-                                nuclide72.bo2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.bo2 = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("H2O"))
                             {
-                                nuclide72.h2o = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.h2o = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CON"))
                             {
-                                nuclide72.con = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.con = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CSI"))
                             {
-                                nuclide72.csi = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.csi = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                             }
                             else if (splitedLineVal[0].Equals("CSM"))
                             {
-                                nuclide72.csm = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 analysis.nuclide72.csm = Convert.ToDouble(splitedLineVal[ctyp6Pos]);
                                 is72hrFound = false;
                                 break;
@@ -398,6 +362,32 @@ namespace MELCORUncertaintyOutputFileHelper
                 }
             }
             return analysis;
+        }
+
+        private Analysis CalculateFraction(Analysis analysis)
+        {
+            var tmp = analysis;
+            tmp.fraction24.xe = analysis.nuclide24.xe / 1.88E+02;
+            tmp.fraction24.cs = (analysis.nuclide24.cs + analysis.nuclide24.csi * 0.511556 + analysis.nuclide24.csm * 0.73478922) / 1.05E+02;
+            tmp.fraction24.ba = analysis.nuclide24.ba / 8.25E+01;
+            tmp.fraction24.i2 = (analysis.nuclide24.i2 + analysis.nuclide24.csi * 0.488444) / 8.10E+00;
+            tmp.fraction24.te = analysis.nuclide24.te / 1.65E+01;
+            tmp.fraction24.ru = analysis.nuclide24.ru / 1.16E+02;
+            tmp.fraction24.mo = (analysis.nuclide24.mo + analysis.nuclide24.csm * 0.26521078) / 1.37E+02;
+            tmp.fraction24.ce = analysis.nuclide24.ce;
+            tmp.fraction24.la = analysis.nuclide24.la / 2.24E+02;
+
+            tmp.fraction72.xe = analysis.nuclide72.xe / 1.88E+02;
+            tmp.fraction72.cs = (analysis.nuclide72.cs + analysis.nuclide72.csi * 0.511556 + analysis.nuclide72.csm * 0.73478922) / 1.05E+02;
+            tmp.fraction72.ba = analysis.nuclide72.ba / 8.25E+01;
+            tmp.fraction72.i2 = (analysis.nuclide72.i2 + analysis.nuclide72.csi * 0.488444) / 8.10E+00;
+            tmp.fraction72.te = analysis.nuclide72.te / 1.65E+01;
+            tmp.fraction72.ru = analysis.nuclide72.ru / 1.16E+02;
+            tmp.fraction72.mo = (analysis.nuclide72.mo + analysis.nuclide72.csm * 0.26521078) / 1.37E+02;
+            tmp.fraction72.ce = analysis.nuclide72.ce;
+            tmp.fraction72.la = analysis.nuclide72.la / 2.24E+02;
+
+            return tmp;
         }
 
     }

@@ -61,10 +61,15 @@ namespace MELCORUncertaintyOutputFileHelper
         public void PrintAnalysis(Analysis analysis)
         {
             this.dgvResult.Rows.Add(analysis.name, analysis.samg, analysis.fpRelease, analysis.availTime,
-                analysis.fraction24.xe, analysis.fraction24.cs, analysis.fraction24.ba, analysis.fraction24.i2, analysis.fraction24.te,
-                analysis.fraction24.ru, analysis.fraction24.mo, analysis.fraction24.ce, analysis.fraction24.la,
-                analysis.fraction72.xe, analysis.fraction72.cs, analysis.fraction72.ba, analysis.fraction72.i2, analysis.fraction72.te,
-                analysis.fraction72.ru, analysis.fraction72.mo, analysis.fraction72.ce, analysis.fraction72.la);
+                string.Format("{0:0.0000E+00}", analysis.fraction24.xe), string.Format("{0:0.0000E+00}", analysis.fraction24.cs),
+                string.Format("{0:0.0000E+00}", analysis.fraction24.ba), string.Format("{0:0.0000E+00}", analysis.fraction24.i2),
+                string.Format("{0:0.0000E+00}", analysis.fraction24.te), string.Format("{0:0.0000E+00}", analysis.fraction24.ru),
+                string.Format("{0:0.0000E+00}", analysis.fraction24.mo), string.Format("{0:0.0000E+00}", analysis.fraction24.ce),
+                string.Format("{0:0.0000E+00}", analysis.fraction24.la), string.Format("{0:0.0000E+00}", analysis.fraction72.xe),
+                string.Format("{0:0.0000E+00}", analysis.fraction72.cs), string.Format("{0:0.0000E+00}", analysis.fraction72.ba),
+                string.Format("{0:0.0000E+00}", analysis.fraction72.i2), string.Format("{0:0.0000E+00}", analysis.fraction72.te),
+                string.Format("{0:0.0000E+00}", analysis.fraction72.ru), string.Format("{0:0.0000E+00}", analysis.fraction72.mo),
+                string.Format("{0:0.0000E+00}", analysis.fraction72.ce), string.Format("{0:0.0000E+00}", analysis.fraction72.la));
         }
 
     }
