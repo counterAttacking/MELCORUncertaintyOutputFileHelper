@@ -8,6 +8,19 @@ namespace MELCORUncertaintyOutputFileHelper
 {
     public class Analysis
     {
+        public Nuclide nuclide24;
+        public Nuclide nuclide72;
+        public ReleaseFraction fraction24;
+        public ReleaseFraction fraction72;
+
+        public Analysis()
+        {
+            this.nuclide24 = new Nuclide();
+            this.nuclide72 = new Nuclide();
+            this.fraction24 = new ReleaseFraction();
+            this.fraction72 = new ReleaseFraction();
+        }
+
         public string name
         {
             set;
@@ -27,30 +40,6 @@ namespace MELCORUncertaintyOutputFileHelper
         }
 
         public double availTime
-        {
-            set;
-            get;
-        }
-
-        public Nuclide nuclide24
-        {
-            set;
-            get;
-        }
-
-        public Nuclide nuclide72
-        {
-            set;
-            get;
-        }
-
-        public ReleaseFraction fraction24
-        {
-            set;
-            get;
-        }
-
-        public ReleaseFraction fraction72
         {
             set;
             get;

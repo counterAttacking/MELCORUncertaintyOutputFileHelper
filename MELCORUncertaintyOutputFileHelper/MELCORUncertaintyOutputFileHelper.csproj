@@ -80,6 +80,13 @@
     <Compile Include="ExplorerForm.Designer.cs">
       <DependentUpon>ExplorerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory.cs" />
+    <Compile Include="InventoryInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryInputForm.Designer.cs">
+      <DependentUpon>InventoryInputForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="ExplorerForm.resx">
       <DependentUpon>ExplorerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryInputForm.resx">
+      <DependentUpon>InventoryInputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
