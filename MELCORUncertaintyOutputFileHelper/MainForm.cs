@@ -17,6 +17,7 @@ namespace MELCORUncertaintyOutputFileHelper
     {
         private ExplorerForm frmExplorer;
         private ResultForm frmResult;
+        private InventoryInputForm frmInventory;
         private static string targetStr = "_PCOUT.txt";
 
         public MainForm()
@@ -25,12 +26,14 @@ namespace MELCORUncertaintyOutputFileHelper
 
             this.frmExplorer = new ExplorerForm(this);
             this.frmResult = new ResultForm();
+            this.frmInventory = new InventoryInputForm();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.frmExplorer.Show(this.dockPnlMain, DockState.DockLeft);
             this.frmResult.Show(this.dockPnlMain, DockState.Document);
+            this.frmInventory.Show(this.dockPnlMain, DockState.DockLeft);
         }
 
         private void RibbonBtnOpenFolder_Click(object sender, EventArgs e)
@@ -133,7 +136,14 @@ namespace MELCORUncertaintyOutputFileHelper
 
         private void RibbonBtnRun_Click(object sender, EventArgs e)
         {
-            this.frmExplorer.Run();
+            var isSelected = this.frmInventory.isSelected;
+            if (isSelected == false)
+            {
+                MessageBox.Show("Please Select Unit", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var inventory = this.frmInventory.inventory;
+            this.frmExplorer.Run(inventory);
         }
 
         public void PrintResult(Analysis analysis)

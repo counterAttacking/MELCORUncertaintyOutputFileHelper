@@ -89,17 +89,17 @@ namespace MELCORUncertaintyOutputFileHelper
             }
         }
 
-        public void Run()
+        public void Run(Inventory inventory)
         {
             if (this.tvwFiles.Nodes.Count <= 0)
             {
                 return;
             }
-            this.TraversalAllNode(this.tvwFiles);
+            this.TraversalAllNode(this.tvwFiles, inventory);
             MessageBox.Show("It's done.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void TraversalAllNode(TreeView treeView)
+        private void TraversalAllNode(TreeView treeView, Inventory inventory)
         {
             TreeNodeCollection nodes = treeView.Nodes;
             foreach (TreeNode node in nodes)
@@ -107,7 +107,7 @@ namespace MELCORUncertaintyOutputFileHelper
                 foreach (TreeNode elem in node.Nodes)
                 {
                     var analysis = this.ReadFiles(elem.Name);
-                    analysis = this.CalculateFraction(analysis);
+                    analysis = this.CalculateFraction(analysis, inventory);
                     this.frmMain.PrintResult(analysis);
                 }
             }
@@ -364,28 +364,28 @@ namespace MELCORUncertaintyOutputFileHelper
             return analysis;
         }
 
-        private Analysis CalculateFraction(Analysis analysis)
+        private Analysis CalculateFraction(Analysis analysis, Inventory inventory)
         {
             var tmp = analysis;
-            tmp.fraction24.xe = analysis.nuclide24.xe / 2.909E+02;
-            tmp.fraction24.cs = (analysis.nuclide24.cs + analysis.nuclide24.csi * 0.511556 + analysis.nuclide24.csm * 0.73478922) / 1.621E+02;
-            tmp.fraction24.ba = analysis.nuclide24.ba / 1.276E+02;
-            tmp.fraction24.i2 = (analysis.nuclide24.i2 + analysis.nuclide24.csi * 0.488444) / 1.253E+01;
-            tmp.fraction24.te = analysis.nuclide24.te / 2.552E+01;
-            tmp.fraction24.ru = analysis.nuclide24.ru / 1.795E+02;
-            tmp.fraction24.mo = (analysis.nuclide24.mo + analysis.nuclide24.csm * 0.26521078) / 2.117E+02;
-            tmp.fraction24.ce = analysis.nuclide24.ce / 3.735E+02;
-            tmp.fraction24.la = analysis.nuclide24.la / 3.466E+02;
+            tmp.fraction24.xe = analysis.nuclide24.xe / inventory.xe;
+            tmp.fraction24.cs = (analysis.nuclide24.cs + analysis.nuclide24.csi * 0.511556 + analysis.nuclide24.csm * 0.73478922) / inventory.cs;
+            tmp.fraction24.ba = analysis.nuclide24.ba / inventory.ba;
+            tmp.fraction24.i2 = (analysis.nuclide24.i2 + analysis.nuclide24.csi * 0.488444) / inventory.i2;
+            tmp.fraction24.te = analysis.nuclide24.te / inventory.te;
+            tmp.fraction24.ru = analysis.nuclide24.ru / inventory.ru;
+            tmp.fraction24.mo = (analysis.nuclide24.mo + analysis.nuclide24.csm * 0.26521078) / inventory.mo;
+            tmp.fraction24.ce = analysis.nuclide24.ce / inventory.ce;
+            tmp.fraction24.la = analysis.nuclide24.la / inventory.la;
 
-            tmp.fraction72.xe = analysis.nuclide72.xe / 2.909E+02;
-            tmp.fraction72.cs = (analysis.nuclide72.cs + analysis.nuclide72.csi * 0.511556 + analysis.nuclide72.csm * 0.73478922) / 1.621E+02;
-            tmp.fraction72.ba = analysis.nuclide72.ba / 1.276E+02;
-            tmp.fraction72.i2 = (analysis.nuclide72.i2 + analysis.nuclide72.csi * 0.488444) / 1.253E+01;
-            tmp.fraction72.te = analysis.nuclide72.te / 2.552E+01;
-            tmp.fraction72.ru = analysis.nuclide72.ru / 1.795E+02;
-            tmp.fraction72.mo = (analysis.nuclide72.mo + analysis.nuclide72.csm * 0.26521078) / 2.117E+02;
-            tmp.fraction72.ce = analysis.nuclide72.ce / 3.735E+02;
-            tmp.fraction72.la = analysis.nuclide72.la / 3.466E+02;
+            tmp.fraction72.xe = analysis.nuclide72.xe / inventory.xe;
+            tmp.fraction72.cs = (analysis.nuclide72.cs + analysis.nuclide72.csi * 0.511556 + analysis.nuclide72.csm * 0.73478922) / inventory.cs;
+            tmp.fraction72.ba = analysis.nuclide72.ba / inventory.ba;
+            tmp.fraction72.i2 = (analysis.nuclide72.i2 + analysis.nuclide72.csi * 0.488444) / inventory.i2;
+            tmp.fraction72.te = analysis.nuclide72.te / inventory.te;
+            tmp.fraction72.ru = analysis.nuclide72.ru / inventory.ru;
+            tmp.fraction72.mo = (analysis.nuclide72.mo + analysis.nuclide72.csm * 0.26521078) / inventory.mo;
+            tmp.fraction72.ce = analysis.nuclide72.ce / inventory.ce;
+            tmp.fraction72.la = analysis.nuclide72.la / inventory.la;
 
             return tmp;
         }
