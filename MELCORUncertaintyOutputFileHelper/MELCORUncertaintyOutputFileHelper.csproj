@@ -178,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="appIcon.ico" />
+    <None Include="Images\resultt.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
