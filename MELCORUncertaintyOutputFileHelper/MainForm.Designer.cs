@@ -152,7 +152,7 @@
             this.KeyPreview = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MELCOR Output File Helper";
+            this.Text = "MELCOR Uncertainty Output File Helper";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
